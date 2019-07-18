@@ -10,36 +10,38 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 <body>
-<div class="row">
-	<div class="col-md-4 col-sm-12">
-		<div class="card">
-			<div class="card-header bg-dark text-white text-center">HTML</div>
-			<div class="table-responsive">
-				<div id="html" class="border" style="height: 300px;"></div>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-4 col-sm-12">
-		<div class="card">
-			<div class="card-header bg-dark text-white text-center">CSS</div>
-			<div class="table-responsive">
-				<div id="css" class="border" style="height: 300px;"></div>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-4 col-sm-12">
-		<div class="card">
-			<div class="card-header bg-dark text-white text-center">Javascript</div>
-			<div class="table-responsive">
-				<div id="javascript" class="border" style="height: 300px;"></div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="container-fluid">
+<div style="background: #000;">
 	<div class="row">
-		<div class="col-md-12 col-sm-12">
-			<button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#getcode" id="getcodes">GET CODE</button>
+		<div class="col-md-4 col-sm-12">
+			<div class="card">
+				<div class="card-header bg-dark text-white text-center">HTML</div>
+				<div class="table-responsive">
+					<div id="html" class="border" style="height: 300px;"></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-12">
+			<div class="card">
+				<div class="card-header bg-dark text-white text-center">CSS</div>
+				<div class="table-responsive">
+					<div id="css" class="border" style="height: 300px;"></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-12">
+			<div class="card">
+				<div class="card-header bg-dark text-white text-center">Javascript</div>
+				<div class="table-responsive">
+					<div id="javascript" class="border" style="height: 300px;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#getcode" id="getcodes">GET CODE</button>
+			</div>
 		</div>
 	</div>
 </div>
@@ -61,8 +63,8 @@
 		</div>
 	</div>
 </div>
-<div class="modal" id="getcode">
-  <div class="modal-dialog">
+<div class="modal fade" id="getcode">
+  <div class="modal-dialog modal-md">
     <div class="modal-content">
 
       <!-- Modal Header -->
@@ -73,21 +75,22 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-        <textarea id="resultgetcode" cols="30" rows="10" class="form-control">
-        	
-        </textarea>
-      </div>
+      	<div class="form-group">
+      		<label for="resultgetcodemini">minify</label>
+      		<textarea id="resultgetcodemini" cols="30" rows="10" class="form-control"></textarea>
+      	</div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-      		<button type="button" class="btn btn-success" onclick="myFunction()">Copy to clipboard</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      	<button type="button" class="btn btn-success ml-auto" onclick="myFunction()">Copy to clipboard</button>
+        <button type="button" class="btn btn-danger mr-auto" data-dismiss="modal">Close</button>
       </div>
 
     </div>
   </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ace.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ext-beautify.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -125,8 +128,9 @@
 		}
 
 		function update() {
+
 			var result = $("#previewtarget")[0].contentWindow.document;
-			var resultforcopy = $("#resultgetcode");
+			var resultforcopy1 = $("#resultgetcodemini");
 
 			result.open();
 			result.close();
@@ -135,13 +139,13 @@
 			$("head", result).append("<meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style>" + csseditor.getValue() + "</style>");
 			$("body", result).append("<script>" + javascripteditor.getValue() + "<\/script>" );
 
-			resultforcopy.val("<!DOCTYPE html><html lang=\"en\">" + result.documentElement.innerHTML + "</html>");
+			resultforcopy1.val("<!DOCTYPE html><html lang=\"en\">" + result.documentElement.innerHTML + "</html>");
 
 		}
 
 	});
 	function myFunction() {
-  		var copyText = document.getElementById("resultgetcode");
+  		var copyText = document.getElementById("resultgetcodemini");
   		copyText.select();
   		document.execCommand("copy");
 	}
