@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Coding Online by INDOSEC">
-  	<meta name="keywords" content="coding,online,coding online,indosec">
+	<meta name="description" content="Coding Online">
+  	<meta name="keywords" content="coding,online,coding online">
   	<meta name="author" content="Rizsyad AR">
-	<title>Coding Online | INDOSEC</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<title>Coding Online</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 <body>
 
@@ -16,7 +16,6 @@
 		<div class="card">
 			<div class="card-header bg-dark text-white text-center">
 				HTML
-				<!-- <a href="#demo" data-toggle="collapse" class="text-white text-right">Collapsible</a> -->
 			</div>
 			<div class="table-responsive">
 				<div id="html" class="border" style="height: 300px;"></div>
@@ -45,8 +44,7 @@
 		<div class="card">
 			<div class="card-header bg-dark text-white text-center">VIEW</div>
 			<div class="embed-responsive embed-responsive-1by1">
-				<iframe class="embed-responsive-item" id="previewtarget" >
-				</iframe>
+				<iframe class="embed-responsive-item" id="previewtarget" ></iframe>
 			</div>
 		</div>
 	</div>
