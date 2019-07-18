@@ -10,13 +10,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 <body>
-
 <div class="row">
 	<div class="col-md-4 col-sm-12">
 		<div class="card">
-			<div class="card-header bg-dark text-white text-center">
-				HTML
-			</div>
+			<div class="card-header bg-dark text-white text-center">HTML</div>
 			<div class="table-responsive">
 				<div id="html" class="border" style="height: 300px;"></div>
 			</div>
@@ -39,15 +36,56 @@
 		</div>
 	</div>
 </div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 col-sm-12">
+			<button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#getcode" id="getcodes">GET CODE</button>
+		</div>
+	</div>
+</div>
 <div class="row">
 	<div class="col-md-12 col-sm-12">
 		<div class="card">
 			<div class="card-header bg-dark text-white text-center">VIEW</div>
-			<div class="embed-responsive embed-responsive-1by1">
-				<iframe class="embed-responsive-item" id="previewtarget" ></iframe>
+			<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" id="previewtarget" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts" allowpaymentrequest="true" allowtransparency="true">
+					<!DOCTYPE html>
+					<html lang="en">
+					<head>
+					</head>
+					<body>		
+					</body>
+					</html>
+				</iframe>
 			</div>
 		</div>
 	</div>
+</div>
+<div class="modal" id="getcode">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Code</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <textarea id="resultgetcode" cols="30" rows="10" class="form-control">
+        	
+        </textarea>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+      		<button type="button" class="btn btn-success" onclick="myFunction()">Copy to clipboard</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ace.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -87,15 +125,26 @@
 		}
 
 		function update() {
-			var result = document.getElementById("previewtarget").contentWindow.document;
+			var result = $("#previewtarget")[0].contentWindow.document;
+			var resultforcopy = $("#resultgetcode");
+
 			result.open();
-			result.write(htmleditor.getValue()); 
-			result.write("<style>" + csseditor.getValue() + "<\/style>");
-			result.write("<script>" + javascripteditor.getValue() + "<\/script>");
 			result.close();
+
+			$("body", result).append(htmleditor.getValue());
+			$("head", result).append("<meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style>" + csseditor.getValue() + "</style>");
+			$("body", result).append("<script>" + javascripteditor.getValue() + "<\/script>" );
+
+			resultforcopy.val("<!DOCTYPE html><html lang=\"en\">" + result.documentElement.innerHTML + "</html>");
+
 		}
 
 	});
+	function myFunction() {
+  		var copyText = document.getElementById("resultgetcode");
+  		copyText.select();
+  		document.execCommand("copy");
+	}
 </script>
 </body>
 </html>
