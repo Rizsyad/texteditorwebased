@@ -1,153 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Coding Online">
-  	<meta name="keywords" content="coding,online,coding online">
-  	<meta name="author" content="Rizsyad AR">
-	<title>Coding Online</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Coding Online">
+    <meta name="keywords" content="coding,online,coding online">
+    <meta name="author" content="Rizsyad AR">
+    <title>Coding Online</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
+
 <body>
-<div style="background: #000;">
-	<div class="row">
-		<div class="col-md-4 col-sm-12">
-			<div class="card">
-				<div class="card-header bg-dark text-white text-center">HTML</div>
-				<div class="table-responsive">
-					<div id="html" class="border" style="height: 300px;"></div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 col-sm-12">
-			<div class="card">
-				<div class="card-header bg-dark text-white text-center">CSS</div>
-				<div class="table-responsive">
-					<div id="css" class="border" style="height: 300px;"></div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 col-sm-12">
-			<div class="card">
-				<div class="card-header bg-dark text-white text-center">Javascript</div>
-				<div class="table-responsive">
-					<div id="javascript" class="border" style="height: 300px;"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#getcode" id="getcodes">GET CODE</button>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="row">
-	<div class="col-md-12 col-sm-12">
-		<div class="card">
-			<div class="card-header bg-dark text-white text-center">VIEW</div>
-			<div class="embed-responsive embed-responsive-16by9">
-				<iframe class="embed-responsive-item" id="previewtarget" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts" allowpaymentrequest="true" allowtransparency="true">
-					<!DOCTYPE html>
-					<html lang="en">
-					<head>
-					</head>
-					<body>		
-					</body>
-					</html>
-				</iframe>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="modal fade" id="getcode">
-  <div class="modal-dialog modal-md">
-    <div class="modal-content">
+    <div class="row">
+        <div class="col-md-6 border ">
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Code</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
+            <ul class="nav nav-tabs bg-dark">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#html">
+                        <div class="card-header bg-dark text-white text-center">HTML</div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " data-toggle="tab" href="#css">
+                        <div class="card-header bg-dark text-white text-center">CSS</div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " data-toggle="tab" href="#js">
+                        <div class="card-header bg-dark text-white text-center">JavaScript</div>
+                    </a>
+                </li>
+            </ul>
 
-      <!-- Modal body -->
-      <div class="modal-body">
-      	<div class="form-group">
-      		<label for="resultgetcodemini">minify</label>
-      		<textarea id="resultgetcodemini" cols="30" rows="10" class="form-control"></textarea>
-      	</div>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="html" class="container tab-pane active" style="height: 700px;"></div>
+                <div id="css" class="container tab-pane fade" style="height: 700px;"></div>
+                <div id="js" class="container tab-pane fade" style="height: 700px;"></div>
+            </div>
+        </div>
 
-      <!-- Modal footer -->
-      <div class="modal-footer">
-      	<button type="button" class="btn btn-success ml-auto" onclick="myFunction()">Copy to clipboard</button>
-        <button type="button" class="btn btn-danger mr-auto" data-dismiss="modal">Close</button>
-      </div>
+        <div class="col-md-6">
+            <div class="border">
+                <div class="card-header bg-dark text-white text-center mb-2">VIEW</div>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" id="previewtarget"
+                        sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts"
+                        allowpaymentrequest="true" allowtransparency="true">
+                        <!DOCTYPE html>
+                        <html lang="en">
 
+                        <head>
+                        </head>
+
+                        <body>
+                        </body>
+
+                        </html>
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
     </div>
-  </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ace.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script>
-	$(document).ready(function() {
-		setEditor();
-		update();
+    <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#getcode" id="getcodes">GET
+        CODE</button>
 
-		function setEditor() {
-			window.htmleditor = ace.edit("html");
-			htmleditor.setTheme("ace/theme/monokai");
-			htmleditor.session.setMode("ace/mode/html");
+    <div class="modal fade" id="getcode">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
 
-			htmleditor.getSession().on("change", function() {
-				update();
-			});
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Code</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
 
-			window.csseditor = ace.edit("css");
-			csseditor.setTheme("ace/theme/monokai");
-			csseditor.session.setMode("ace/mode/css");
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="resultgetcodemini">minify</label>
+                        <textarea id="resultgetcodemini" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
 
-			csseditor.getSession().on("change", function() {
-				update();
-			});
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success ml-auto" id="copy">Copy to
+                            clipboard</button>
+                        <button type="button" class="btn btn-danger mr-auto" data-dismiss="modal">Close</button>
+                    </div>
 
-			window.javascripteditor = ace.edit("javascript");
-			javascripteditor.setTheme("ace/theme/monokai");
-			javascripteditor.session.setMode("ace/mode/javascript");
+                </div>
+            </div>
+        </div>
 
-			javascripteditor.getSession().on("change", function() {
-				update();
-			});
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ace.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                setEditor();
+                update();
 
-			update();
-		}
+                function setEditor() {
+                    window.htmleditor = ace.edit("html");
+                    htmleditor.setTheme("ace/theme/monokai");
+                    htmleditor.session.setMode("ace/mode/html");
 
-		function update() {
+                    htmleditor.getSession().on("change", function () {
+                        update();
+                    });
 
-			var result = $("#previewtarget")[0].contentWindow.document;
-			var resultforcopy1 = $("#resultgetcodemini");
+                    window.csseditor = ace.edit("css");
+                    csseditor.setTheme("ace/theme/monokai");
+                    csseditor.session.setMode("ace/mode/css");
 
-			result.open();
-			result.close();
+                    csseditor.getSession().on("change", function () {
+                        update();
+                    });
 
-			$("body", result).append(htmleditor.getValue());
-			$("head", result).append("<meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style>" + csseditor.getValue() + "</style>");
-			$("body", result).append("<script>" + javascripteditor.getValue() + "<\/script>" );
+                    window.javascripteditor = ace.edit("js");
+                    javascripteditor.setTheme("ace/theme/monokai");
+                    javascripteditor.session.setMode("ace/mode/javascript");
 
-			resultforcopy1.val("<!DOCTYPE html><html lang=\"en\">" + result.documentElement.innerHTML + "</html>");
+                    javascripteditor.getSession().on("change", function () {
+                        update();
+                    });
 
-		}
+                    update();
+                }
 
-	});
-	function myFunction() {
-  		var copyText = document.getElementById("resultgetcodemini");
-  		copyText.select();
-  		document.execCommand("copy");
-	}
-</script>
+                function update() {
+
+                    let result = $("#previewtarget")[0].contentWindow.document;
+                    let resultforcopy = $("#resultgetcodemini");
+
+                    result.open();
+                    result.close();
+
+                    $("body", result).append(htmleditor.getValue());
+                    $("head", result).append(
+                        "<meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style>" +
+                        csseditor.getValue() + "</style>");
+                    $("body", result).append("<script>" + javascripteditor.getValue() + "<\/script>");
+
+                    resultforcopy.val("<!DOCTYPE html><html lang=\"en\">" + result.documentElement.innerHTML +
+                        "</html>");
+                }
+
+                $("#copy").click(function () {
+                    let copyText = document.getElementById("resultgetcodemini");
+                    copyText.select();
+                    document.execCommand("copy");
+                });
+            });
+        </script>
 </body>
+
 </html>
